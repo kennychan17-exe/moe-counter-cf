@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "moe-counter-cf",
+  "main": "./src/index.ts",
+  "compatibility_date": "2026-05-13",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "<CF_DOMAIN>",
+      "custom_domain": true,
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "<CF_KV_ID>",
+      "preview_id": "<CF_PREVIEW_KV_ID>",
+    },
+  ],
+  "observability": {
+    "enabled": true,
+  },
+}

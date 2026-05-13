@@ -1,8 +1,9 @@
 import { Hono } from 'hono';
 import { cache } from 'hono/cache';
-import index from './routes/index';
+
 import api from './routes/api';
 import image from './routes/image';
+import index from './routes/index';
 
 const app = new Hono();
 
@@ -10,7 +11,7 @@ app.use(
   cache({
     cacheName: 'default',
     cacheControl: 'no-cache',
-  })
+  }),
 );
 
 index(app);

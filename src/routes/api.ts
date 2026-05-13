@@ -1,9 +1,10 @@
-import settings from '../../settings.json';
-import { Hono, Context } from 'hono';
-import { KVNamespace } from '@cloudflare/workers-types';
+import { type KVNamespace } from '@cloudflare/workers-types';
+import { Hono, type Context } from 'hono';
 import { env } from 'hono/adapter';
-import { validateID } from '../utils';
 import { HTTPException } from 'hono/http-exception';
+
+import settings from '../../settings.json';
+import { validateID } from '../utils';
 
 export default (app: Hono) => {
   const secret = settings.api.secret;

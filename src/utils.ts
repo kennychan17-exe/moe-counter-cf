@@ -1,6 +1,7 @@
+import { HTTPException } from 'hono/http-exception';
+
 import settings from '../settings.json';
 import themes from '../themes';
-import { HTTPException } from 'hono/http-exception';
 
 export function minify(str: string) {
   return str
@@ -10,7 +11,10 @@ export function minify(str: string) {
     .trim();
 }
 
-export function validateID(id: string) {
+export function validateID(id?: string) {
+  if (!id) {
+    throw new HTTPException(400, { message: 'Missing Counter ID' });
+  }
   if (!/^[a-z0-9:.@_-]{1,256}$/i.test(id)) {
     throw new HTTPException(400, { message: 'Invalid Counter ID' });
   }

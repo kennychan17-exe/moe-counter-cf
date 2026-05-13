@@ -1,7 +1,8 @@
-import themes from '../../themes';
-import { Hono, Context } from 'hono';
+import { type KVNamespace } from '@cloudflare/workers-types';
+import { Hono, type Context } from 'hono';
 import { env } from 'hono/adapter';
-import { KVNamespace } from '@cloudflare/workers-types';
+
+import themes from '../../themes';
 import {
   validateDarkmode,
   validateID,
@@ -15,7 +16,7 @@ function genImage(
   theme: string,
   length: number | string,
   render: string,
-  darkmode: string
+  darkmode: string,
 ) {
   let nums;
   if (length === 'auto') {
