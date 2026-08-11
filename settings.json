@@ -15,8 +15,7 @@
     "enabled": true
   },
   "ids": {
-    "dsrkafuu:demo": "Demo for GitHub & preview site.",
-    "dsrkafuu:home": "Personal blog & GitHub page.",
-    "dsrkafuu:itasha": "For itasha page counter usage."
-  }
+  "dsrkafuu:demo": "Demo for GitHub & preview site.",
+  "kennychan17": "My website counter"
+}
 }
